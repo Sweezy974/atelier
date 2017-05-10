@@ -80,22 +80,60 @@ class User
     $req -> bindParam(':classroom', $_POST['ChildClass']);
     $req -> execute();
 
+    // select the last parent
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare('SELECT id FROM parent WHERE lastname="'.$_POST['ParentLastname'].'" AND firstname="'.$_POST['ParentFirstname'].'" AND email="'.$_POST['ParentMail'].'"  ORDER BY id DESC LIMIT 1 ');
+    $req->execute();
+    $parent = $req->fetch();
+    $lastParent=$parent['id'];
+
+    // select the last child
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare('SELECT id FROM kid WHERE lastname="'.$_POST['ChildLastname'].'" AND firstname="'.$_POST['ChildFirstname'].'" AND birthday="'.$_POST['ChildDate'].'"  ORDER BY id DESC LIMIT 1');
+    $req->execute();
+    $child = $req->fetch();
+    $lastChild=$child['id'];
+    echo "lastchild1:".$lastChild;
+
+    // link kid to their parents
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("INSERT INTO kid_has_parent (kid_id,parent_id) VALUES (:kid_id,:parent_id)");
+    $req -> bindParam(':kid_id',  $lastChild);
+    $req -> bindParam(':parent_id', $lastParent);
+    $req -> execute();
+
     // add a second child
     if ($_POST['ChildFirstname2'] !="" AND $_POST['ChildLastname2'] !="" AND $_POST['ChildDate2']) {
+      echo " </br>2e enfant";
       # code...
-    $bdd = $this->getConnection();
-    $req = $bdd->prepare ("INSERT INTO kid (firstname,lastname,birthday,classroom) VALUES (:fname,:lname,:birthday,:classroom)");
-    // var_dump($req);
-    $req -> bindParam(':fname',  $_POST['ChildFirstname2']);
-    $req -> bindParam(':lname',  $_POST['ChildLastname2']);
-    $req -> bindParam(':birthday',  $_POST['ChildDate2']);
-    $req -> bindParam(':classroom', $_POST['ChildClass2']);
-    $req -> execute();
-    echo "2ndChild";
-  }
-  else {
-    echo "no second";
-  }
+      $bdd = $this->getConnection();
+      $req = $bdd->prepare ("INSERT INTO kid (firstname,lastname,birthday,classroom) VALUES (:fname,:lname,:birthday,:classroom)");
+      // var_dump($req);
+      $req -> bindParam(':fname',  $_POST['ChildFirstname2']);
+      $req -> bindParam(':lname',  $_POST['ChildLastname2']);
+      $req -> bindParam(':birthday',  $_POST['ChildDate2']);
+      $req -> bindParam(':classroom', $_POST['ChildClass2']);
+      $req -> execute();
+
+      // select the last child
+      $bdd = $this->getConnection();
+      $req = $bdd->prepare('SELECT id FROM kid WHERE lastname="'.$_POST['ChildLastname2'].'" AND firstname="'.$_POST['ChildFirstname2'].'" AND birthday="'.$_POST['ChildDate2'].'"  ORDER BY id DESC LIMIT 1');
+      $req->execute();
+      $child2 = $req->fetch();
+      $lastChild2=$child2['id'];
+      echo " </br>lastchild2:".$lastChild2;
+
+      // link kid to their parents
+      $bdd = $this->getConnection();
+      $req = $bdd->prepare ("INSERT INTO kid_has_parent (kid_id,parent_id) VALUES (:kid_id2,:parent_id)");
+      $req -> bindParam(':kid_id2',  $lastChild2);
+      $req -> bindParam(':parent_id', $lastParent);
+      $req -> execute();
+
+    }
+    else {
+      echo "no second";
+    }
 
   }
 
