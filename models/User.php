@@ -109,7 +109,7 @@ class User
     $req -> bindParam(':kid_id',  $lastChild);
     $req -> execute();
 
-    // add a second child
+    // if parent had a second child
     if ($_POST['ChildFirstname2'] !="" AND $_POST['ChildLastname2'] !="" AND $_POST['ChildDate2']) {
       echo " </br>2e enfant";
       # code...

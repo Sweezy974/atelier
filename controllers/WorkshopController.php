@@ -27,14 +27,13 @@ class WorkshopController extends Controller
 
   }
 
-  public function ownerIndex()
+  public function create()
   {
-    // include_once('models/user/ajax/vehicleList.php');
-    include_once('views/user/role/owner/navbar/index.php');
-    include_once('views/user/role/owner/index.php');
-    include_once('views/base/script.php');
+    include_once('views/workshop/create/index.php');
 
-    // echo "Hello Owner Page!";
+    $workshop= new Workshop();
+    $workshop->workshopCreate();
+
   }
 
 
