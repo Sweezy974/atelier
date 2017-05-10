@@ -50,8 +50,9 @@
           <label>Lieu </label>
         </div>
       </div>
-      <div class="col s12 m12 l12">
-        <div class="col s12 m4 l3">
+      <div class="col s12 m12 l12" id="workshopList">
+
+        <!-- <div class="col s12 m4 l3">
           <div class="card" style="overflow: hidden;">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="views/media/img/atelier-interieur.jpg">
@@ -94,7 +95,7 @@
                     <p><a href="#!">Prix €</a></p>
                   </div>
                   <div class="card-action center"> <a href="#">Inscription</a> </div> </div>
-                </div>
+                </div> -->
               </div>
 
             </div>
@@ -116,7 +117,7 @@
 
 
   </div>
-  <script src="views/index/js/index.js"></script>
+  <script src="views/workshop/js/index.js"></script>
   <script src="views/media/js/jquery-3.1.0.min.js" charset="utf-8"></script>
   <script src="views/media/js/materialize.js" charset="utf-8"></script>
   <script type="text/javascript">
@@ -133,7 +134,7 @@ $('.collapsible').collapsible();
 
 $(document).ready(function(){
   // we call the function
-  indexVehicleList() ;
+  workshopList() ;
 
 
   $('select').material_select();

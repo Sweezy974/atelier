@@ -1,15 +1,11 @@
 <?php
-
+namespace Models;
 /**
  *
  */
 class Connect
 {
 
-  function __construct()
-  {
-    # code...
-  }
   private $connection;
 
   protected function getConnection()

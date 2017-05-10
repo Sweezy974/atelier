@@ -169,11 +169,14 @@ ENGINE = InnoDB;
 
 -- INSERTION
 
-INSERT INTO `workshop_category` (`id`, `name`) VALUES (NULL, 'JEUX VIDEO'), (NULL, 'EDUCATION');
+INSERT INTO `workshop_category` (`id`, `name`) VALUES (NULL, 'JEUX VIDEO'), (NULL, 'EDUCATION'), (NULL, 'MECANIQUE'),(NULL, 'ART');
 INSERT INTO `public_age` (`id`, `start`, `end`) VALUES (NULL, '5', '7'), (NULL, '8', '10'), (NULL, '11 ', '13'), (NULL, '14', '17');
 INSERT INTO `address` (`id`, `address`, `complement`, `city`, `zipcode`) VALUES (NULL, '115', 'CHEMIN DUCHEMIN', 'STE MARIE', '97438'), (NULL, '12', 'AVENUE LAFORET', 'ST PIERRE', '97410');
 INSERT INTO `establishment` (`id`, `name`, `address_id`) VALUES (NULL, 'PIERRE ROSELLI', '2'), (NULL, 'ESPACE CULTUREL', '1');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'développement 3D', 'apprendre a développer des jeux en 3D', '300.00', '20', 'games.jpg', '1', '4', '1', '1');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'Automobile', 'autour de la passion automobile qui utilise les énergies de demain', '20', '15', 'auto.jpg', NULL, '4', '2', '3');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Mathématiques orientée objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'La pyramide infernale', 'test simplon réunion avant prairie', '0', '16', 'pyramide.jpg', '1', '4', '2', '4');
 INSERT INTO `timetable` (`id`, `startAt`, `endAt`, `enable`, `workshop_id`) VALUES (NULL, '2017-05-18 00:00:00', '2017-05-19 00:00:00', '1', '1');
 INSERT INTO `kid` (`id`, `firstname`, `lastname`, `birthday`, `classroom`) VALUES (NULL, 'JUNIOR', 'THE KID', '2010-11-10', 'CP');
 INSERT INTO `kid` (`id`, `firstname`, `lastname`, `birthday`, `classroom`) VALUES (NULL, 'ANITA', 'THE KID', '2000-04-10', '2ND');

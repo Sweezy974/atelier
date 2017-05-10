@@ -20,7 +20,7 @@ class WorkshopController extends Controller
 
   public function index()
   {
-    include_once('models/Workshop.php');
+    // include_once('models/Workshop.php');
     include_once('views/workshop/index.php');
 
   }
