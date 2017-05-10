@@ -1,7 +1,7 @@
 <?php
 namespace Controllers;
-use App\Config;
-// use Models\Users;
+use Models\Workshop;
+// include_once('app/Config.php');
 
 
 class WorkshopController extends Controller
@@ -20,6 +20,7 @@ class WorkshopController extends Controller
 
   public function index()
   {
+    include_once('models/Workshop.php');
     include_once('views/workshop/index.php');
 
   }
