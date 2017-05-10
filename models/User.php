@@ -102,6 +102,13 @@ class User
     $req -> bindParam(':parent_id', $lastParent);
     $req -> execute();
 
+    // link kid to a workshop
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("INSERT INTO workshop_has_kid (workshop_id,kid_id,has_participated,validated) VALUES (:workshop_id,:kid_id,0,0)");
+    $req -> bindParam(':workshop_id', $_POST['atelier']);
+    $req -> bindParam(':kid_id',  $lastChild);
+    $req -> execute();
+
     // add a second child
     if ($_POST['ChildFirstname2'] !="" AND $_POST['ChildLastname2'] !="" AND $_POST['ChildDate2']) {
       echo " </br>2e enfant";
@@ -128,6 +135,13 @@ class User
       $req = $bdd->prepare ("INSERT INTO kid_has_parent (kid_id,parent_id) VALUES (:kid_id2,:parent_id)");
       $req -> bindParam(':kid_id2',  $lastChild2);
       $req -> bindParam(':parent_id', $lastParent);
+      $req -> execute();
+
+      // link kid to a workshop
+      $bdd = $this->getConnection();
+      $req = $bdd->prepare ("INSERT INTO workshop_has_kid (workshop_id,kid_id,has_participated,validated) VALUES (:workshop_id,:kid_id2,0,0)");
+      $req -> bindParam(':workshop_id', $_POST['atelier']);
+      $req -> bindParam(':kid_id2',  $lastChild2);
       $req -> execute();
 
     }

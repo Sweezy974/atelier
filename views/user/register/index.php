@@ -28,6 +28,7 @@
 
       <div class="col s12 m6 l6">
         <div class="input-field col s12 m12 l12">
+          <p style="color:grey;">Atelier</p>
 
           <select id="atelierList" class="browser-default" >
             <option value="" disabled selected id="atelierList">Choisissez un atelier</option>
@@ -35,37 +36,37 @@
 
             </select>
           </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="nom"type="text" name="" value="">
-          <label for="nom">nom</label>
+          <label for="nom">nom *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="prenom"type="text" name="" value="">
-          <label for="prenom">prenom</label>
+          <label for="prenom">prenom *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="mail"type="email" name="" value="">
-          <label for="mail">mail</label>
+          <label for="mail">mail *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="adresse"type="text" name="" value="">
-          <label for="adresse">adresse</label>
+          <label for="adresse">adresse *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="complement"type="text" name="" value="">
           <label for="complement">complément d'adresse</label>
         </div>
-        <div class="input-field col l6">
+        <div class="input-field col l6 s6 m6">
           <input id="ville"type="text" name="" value="">
-          <label for="ville">ville</label>
+          <label for="ville">ville *</label>
         </div>
-        <div class="input-field col l6">
+        <div class="input-field col l6 s6 m6">
           <input id="cp"type="text" name="" value="">
-          <label for="cp">code postal</label>
+          <label for="cp">code postal *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="tel"type="text" name="" value="">
-          <label for="tel">telephone</label>
+          <label for="tel">telephone *</label>
         </div>
 
       </div>
@@ -74,45 +75,47 @@
 
       </div>
     </div>
-    <div class="col s12 l12">
+    <div class="col s12 s12 m12 l12">
 
 
       <div class="col l6">
-        <div class="col s12 l12">
+        <div class="col s12 s12 m12 l12">
           <p style="font-weight:bolder">Enfant 1</p>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="nomEnfant1"type="text" name="" value="">
-          <label for="nomEnfant1">nom enfant</label>
+          <label for="nomEnfant1">nom enfant *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="prenomEnfant1"type="text" name="" value="">
-          <label for="prenomEnfant1">prenom enfant</label>
+          <label for="prenomEnfant1">prenom enfant *</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
+          <p style="color:grey;">date de naissance</p>
           <input id="dateEnfant1"type="date" name="" value="">
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="classeEnfant1"type="text" name="" value="">
           <label for="classeEnfant1">classe</label>
         </div>
       </div>
       <div class="col l6">
-        <div class="col s12 l12">
+        <div class="col  s12 m12 l12">
           <p style="font-weight:bolder">Enfant 2</p>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="nomEnfant2"type="text" name="" value="">
           <label for="nomEnfant2">nom enfant</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="prenomEnfant2"type="text" name="" value="">
           <label for="prenomEnfant2">prenom enfant</label>
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
+          <p style="color:grey;">date de naissance</p>
           <input class="datepicker" id="dateEnfant2"type="date" name="" value="">
         </div>
-        <div class="input-field col l12">
+        <div class="input-field col s12 m12 l12">
           <input id="classeEnfant2"type="text" name="" value="">
           <label for="classeEnfant2">classe</label>
         </div>

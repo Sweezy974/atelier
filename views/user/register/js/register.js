@@ -1,21 +1,22 @@
 
 
 function register(){
-  //
-  // if (
-  // $( "#atelierList" ).val() !="" &&
-  // $( "#nom" ).val() != "" &&
-  // $( "#prenom" ).val() != "" &&
-  // $( "#mail" ).val() != "" &&
-  // $( "#adresse" ).val() != "" &&
-  // $( "#ville" ).val() != "" &&
-  // $( "#cp" ).val() != "" &&
-  // $( "#tel" ).val() != "" &&
-  // $( "#nomEnfant1" ).val() != "" &&
-  // $( "#prenomEnfant1" ).val() != "" &&
-  // $( "#dateEnfant1" ).val() != "" &&
-  // )
-  // {
+
+  if (
+    $( "#atelierList" ).val() !="" &&
+    $( "#nom" ).val() != "" &&
+    $( "#prenom" ).val() != "" &&
+    $( "#mail" ).val() != "" &&
+    $( "#adresse" ).val() != "" &&
+    $( "#ville" ).val() != "" &&
+    $( "#cp" ).val() != "" &&
+    $( "#tel" ).val() != "" &&
+    $( "#nomEnfant1" ).val() != "" &&
+    $( "#prenomEnfant1" ).val() != "" &&
+    $( "#dateEnfant1" ).val() != ""
+  ) {
+
+
     $.ajax({
         type: 'POST',
         url: 'models/User.php',
@@ -41,23 +42,15 @@ function register(){
           ChildDate2:$( "#dateEnfant2" ).val(),
           ChildClass2:$( "#classeEnfant2" ).val(),
 
-
-
-          // var message_pri = $(".message_pri:checked").val();
         },
         success: function (data) {
           console.log('inscrit');
-          // window.location ='page.php?id=7&pk='+cc+"#ventes";//redirection modules ventes pour ce client
 
         }
 
     });
+    }
+    else {
+      alert("champs manquants");
+    }
 }
-
-
-//
-//   else{
-//     alert("champs manquants");
-//   }
-//
-// }
