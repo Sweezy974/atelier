@@ -14,7 +14,7 @@ function workshopList() {
 
 
       for (i = 0; i < data.price.length; i++) {
-        $('#workshopList').append('<div class="col s12 m4 l3"> <div class="card" style="overflow: hidden;"> <div class="card-image waves-effect waves-block waves-light"> <img class="activator" src="views/media/img/'+data.image[i]+'"> </div> <div class="card-content"> <p style="font-weight:bolder;">'+data.title[i]+'<p></br><p>'+data.description[i]+'</p> <p><a href="#!">'+data.price[i]+' €</a></p> </div> <div class="card-action center"> <a href="#">Inscription</a> </div> </div> </div>');
+        $('#workshopList').append('<div class="col s12 m4 l3"> <div class="card" style="overflow: hidden;"> <div class="card-image waves-effect waves-block waves-light"> <img style="height:160px!important;"class="activator" src="views/media/img/'+data.image[i]+'"> </div> <div class="card-content"> <p style="font-weight:bolder;">'+data.title[i]+'<p></br><p>'+data.description[i]+'</p> <p><a href="#!">'+data.price[i]+' €</a></p> </div> <div class="card-action center"> <a href="#">Inscription</a> </div> </div> </div>');
 
       }
 

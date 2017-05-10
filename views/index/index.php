@@ -51,55 +51,7 @@
     <div class="col s12 m12 l12">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <div class="col l12">
-      <div class="col s12 l4">
-        <div class="card" style="overflow: hidden;">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="views/media/img/atelier-interieur.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Nom Atelier<i class="material-icons right">more_vert</i></span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in.</p>
-            <p><a href="#!">Prix €</a></p>
-          </div>
-          <div class="card-reveal" style="display: none; transform: translateY(0px);">
-            <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-          <div class="card-action center"> <a href="#">Inscription</a> </div> </div>
-        </div>
-        <div class="col s12 l4">
-          <div class="card" style="overflow: hidden;">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="views/media/img/atelier-interieur.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Nom Atelier<i class="material-icons right">more_vert</i></span>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in.</p>
-              <p><a href="#!">Prix €</a></p>
-            </div>
-            <div class="card-reveal" style="display: none; transform: translateY(0px);">
-              <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-            <div class="card-action center"> <a href="#">Inscription</a> </div> </div>
-          </div>
-          <div class="col s12 l4">
-            <div class="card" style="overflow: hidden;">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="views/media/img/atelier-interieur.jpg">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Nom Atelier<i class="material-icons right">more_vert</i></span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Duis aute irure dolor in.</p>
-                <p><a href="#!">Prix €</a></p>
-              </div>
-              <div class="card-reveal" style="display: none; transform: translateY(0px);">
-                <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-              <div class="card-action center"> <a href="#">Inscription</a> </div> </div>
-            </div>
+    <div class="col l12" id="workshopList">
 
 
           </div>
@@ -160,7 +112,7 @@
 
 
 </div>
-<script src="views/index/js/index.js"></script>
+<script src="views/workshop/js/index.js"></script>
 <script src="views/media/js/jquery-3.1.0.min.js" charset="utf-8"></script>
 <script src="views/media/js/materialize.js" charset="utf-8"></script>
 <script type="text/javascript">
@@ -177,7 +129,7 @@ $('.collapsible').collapsible();
 
 $(document).ready(function(){
   // we call the function
-  indexVehicleList() ;
+  workshopList() ;
 
 
 });

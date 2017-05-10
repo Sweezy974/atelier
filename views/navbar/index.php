@@ -1,5 +1,5 @@
 <div class="navbar-fixed">
-  <nav class="grey">
+  <nav class="blue lighten-1">
     <div class="container">
       <div class="nav-wrapper">
         <a href="#" data-activates="slide-out" class="button-collapse" style="padding-:20px;"><i class="material-icons">menu</i></a>
