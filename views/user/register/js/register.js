@@ -1,14 +1,21 @@
 
 
 function register(){
-
+  //
   // if (
-  // // $( "#rs" ).val() !="" &&
-  // // $(".locationOuVente:checked").val()  &&
-  // // $( "#coms" ).val() != ""
+  // $( "#atelierList" ).val() !="" &&
+  // $( "#nom" ).val() != "" &&
+  // $( "#prenom" ).val() != "" &&
+  // $( "#mail" ).val() != "" &&
+  // $( "#adresse" ).val() != "" &&
+  // $( "#ville" ).val() != "" &&
+  // $( "#cp" ).val() != "" &&
+  // $( "#tel" ).val() != "" &&
+  // $( "#nomEnfant1" ).val() != "" &&
+  // $( "#prenomEnfant1" ).val() != "" &&
+  // $( "#dateEnfant1" ).val() != "" &&
   // )
   // {
-    var idp = $('#id_page').val();
     $.ajax({
         type: 'POST',
         url: 'models/User.php',
@@ -48,9 +55,9 @@ function register(){
 }
 
 
-
-  // else{
-  //   alert("champs manquants");
-  // }
-
+//
+//   else{
+//     alert("champs manquants");
+//   }
+//
 // }

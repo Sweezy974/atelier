@@ -43,9 +43,7 @@ class User
 
   public function workshopRegister()
   {
-    // $lastname = $_POST['ParentLastname'];
-    // $firstname = $_POST['ParentFirstname'];
-    // $email = $_POST['ParentMail'];
+    // add a new address for a  parent
     $bdd = $this->getConnection();
     $req = $bdd->prepare ("INSERT INTO address (address,complement,city,zipcode) VALUES (:address,:complement,:city,:zipcode)");
     $req -> bindParam(':address',  $_POST['ParentAddress']);
@@ -62,6 +60,7 @@ class User
     $lastAddress=$address['id'];
     // return $address;
 
+    // add a new parent
     $bdd = $this->getConnection();
     $req = $bdd->prepare ("INSERT INTO parent (firstname,lastname,email,address_id) VALUES (:fname,:lname,:mail,:address)");
     $req -> bindParam(':fname',  $_POST['ParentFirstname']);
@@ -69,7 +68,35 @@ class User
     $req -> bindParam(':mail',  $_POST['ParentMail']);
     $req -> bindParam(':address', $lastAddress);
     $req -> execute();
-    echo $lastAddress;
+    // echo $lastAddress;
+
+    // add a new child
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("INSERT INTO kid (firstname,lastname,birthday,classroom) VALUES (:fname,:lname,:birthday,:classroom)");
+    // var_dump($req);
+    $req -> bindParam(':fname',  $_POST['ChildFirstname']);
+    $req -> bindParam(':lname',  $_POST['ChildLastname']);
+    $req -> bindParam(':birthday',  $_POST['ChildDate']);
+    $req -> bindParam(':classroom', $_POST['ChildClass']);
+    $req -> execute();
+
+    // add a second child
+    if ($_POST['ChildFirstname2'] !="" AND $_POST['ChildLastname2'] !="" AND $_POST['ChildDate2']) {
+      # code...
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("INSERT INTO kid (firstname,lastname,birthday,classroom) VALUES (:fname,:lname,:birthday,:classroom)");
+    // var_dump($req);
+    $req -> bindParam(':fname',  $_POST['ChildFirstname2']);
+    $req -> bindParam(':lname',  $_POST['ChildLastname2']);
+    $req -> bindParam(':birthday',  $_POST['ChildDate2']);
+    $req -> bindParam(':classroom', $_POST['ChildClass2']);
+    $req -> execute();
+    echo "2ndChild";
+  }
+  else {
+    echo "no second";
+  }
+
   }
 
 }
