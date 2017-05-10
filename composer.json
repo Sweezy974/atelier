@@ -1,0 +1,20 @@
+{
+    "name": "fredB/ atelier",
+    "description": "site atelier",
+    "type": "project",
+
+    "autoload": {
+      "psr-4": {
+        "App\\": "app/",
+        "Models\\": "models/",
+        "Views\\": "views/",
+        "Controllers\\": "controllers/"
+      }
+  },
+  "scripts": {
+      "run": [
+          "echo 'Started web server on http://localhost:3333'",
+          "php -S localhost:3333"
+      ]
+  }
+}

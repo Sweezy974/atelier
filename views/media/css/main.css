@@ -1,0 +1,27 @@
+body{
+  /*background: url('img/beatle.jpg');*/
+  /*background-image: url('../img/beatle.jpg');*/
+  background-size: cover;
+}
+
+.mar{
+  margin-top: 10%!important;
+}
+
+.side-nav li:hover {
+    float: none;
+    line-height: 48px;
+    background-color: #2196f3;
+}
+
+/* Mobile Devices - Smartphone - portrait */
+@media only screen and (max-width : 1150px) {
+
+  nav .brand-logo.center {
+    font-size: medium;
+}
+
+  .marsmart{
+    margin-top: 15px;
+  }
+}
