@@ -1,7 +1,7 @@
 <?php
-// include_once('app/Config.php');
-// namespace Models\Config;
-// use Models\Connect;
+namespace Models;
+use PDO;
+// include_once('models/Config/Connect');
 //
 // /**
 //  *
@@ -33,7 +33,7 @@ class Workshop
     foreach ($workshop as $work) {
       $response['title'][] = utf8_encode($work['title']);
       $response['price'][] = $work['price'];
-      // $response['id'][] = $work['id'];
+      $response['id'][] = $work['id'];
       $response['description'][] = utf8_encode($work['description']);
       $response['image'][] = utf8_encode($work['image']);
     }
@@ -41,9 +41,24 @@ class Workshop
     return $workshop;
   }
 
+  // public function workshopRegister()
+  // {
+  //   $lastname = $_POST['ParentLastname'];
+  //   $firstname = $_POST['ParentFirstname'];
+  //   $email = $_POST['ParentMail'];
+  //
+  //   $bdd = $this->getConnection();
+  //   $req = $bdd->prepare ("INSERT INTO parent (firstname, lastname,email,address_id) VALUES (:fname, :lname,:mail,2)");
+  //   $req -> bindParam(':fname', $fisrtname);
+  //   $req -> bindParam(':lname', $lastname);
+  //   $req -> bindParam(':mail', $email);
+  //   $req -> execute();
+  // }
+
 }
 $workshop = new Workshop();
-$appelNormal = $workshop->listWorkshop();
+$workshop->listWorkshop();
+
 // public function listWorkshop()
 // {
 //         global $bdd;

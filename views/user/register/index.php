@@ -27,6 +27,14 @@
       <div class="col s12 l12">
 
       <div class="col s12 m6 l6">
+        <div class="input-field col s12 m12 l12">
+
+          <select id="atelierList" class="browser-default" >
+            <option value="" disabled selected id="atelierList">Choisissez un atelier</option>
+              <!-- <option value=""selected>n</option> -->
+
+            </select>
+          </div>
         <div class="input-field col l12">
           <input id="nom"type="text" name="" value="">
           <label for="nom">nom</label>
@@ -110,7 +118,7 @@
         </div>
       </div>
       <div class="col s12 m12 l12 center">
-        <a href="#" class="btn btn-flat blue">Inscrire</a>
+        <a onclick="register()" class="btn btn-flat blue">Inscrire</a>
       </div>
 
     </div>
@@ -133,7 +141,8 @@
 
 
 </div>
-<script src="views/index/js/index.js"></script>
+<script src="views/workshop/js/index.js"></script>
+<script src="views/user/register/js/register.js"></script>
 <script src="views/media/js/jquery-3.1.0.min.js" charset="utf-8"></script>
 <script src="views/media/js/materialize.js" charset="utf-8"></script>
 <script type="text/javascript">
@@ -150,10 +159,15 @@ $('.collapsible').collapsible();
 
 $(document).ready(function(){
   // we call the function
-  indexVehicleList() ;
+  workshopList() ;
 
 
 });
+//
+// $(document).ready(function() {
+//    $('select').material_select();
+//  });
+
 
 $('.carousel.carousel-slider').carousel({fullWidth: true});
 $('#textarea1').trigger('autoresize');

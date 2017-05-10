@@ -15,6 +15,8 @@ class UserController extends Controller
   public function register()
   {
     include_once('views/user/register/index.php');
+    $workshopRegister = new Workshop();
+    $workshopRegister = $workshopRegister->listWorkshop();
   }
 
 
