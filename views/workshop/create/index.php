@@ -58,6 +58,16 @@
 
           </select>
         </div>
+        <div class="input-field col s12 m12 offset-l2 l4 center" style="margin-top:20px;margin-bottom:10px;">
+          <p class="center"for="d" style="color:grey;"> date de début</p>
+          <input id="dateDebut"class="center"type="date" name="" value="">
+
+        </div>
+        <div class="input-field col s12 m12  l4 center" style="margin-top:20px;margin-bottom:10px;">
+          <p class="center"for="d" style="color:grey;"> date de fin</p>
+          <input id="dateFin"class="center"type="date" name="" value="">
+
+        </div>
         <div class="input-field col offset-l4 l4 offset-s4 s4 offset-m4 m4 center" style="margin-top:20px;margin-bottom:10px;">
           <input id="maxEnfant"class="center"type="number" name="" value="">
           <label class="center"for="maxEnfant">Nombre max d'enfant</label>

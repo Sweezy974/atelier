@@ -30,10 +30,14 @@ class WorkshopController extends Controller
   public function create()
   {
     include_once('views/workshop/create/index.php');
+    //
+    // $workshop= new Workshop();
+    // $workshop->workshopCreate();
 
-    $workshop= new Workshop();
-    $workshop->workshopCreate();
-
+  }
+  public function edit()
+  {
+    include_once('views/workshop/create/index.php');
   }
 
 

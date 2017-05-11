@@ -53,4 +53,7 @@ function register(){
     else {
       alert("champs manquants");
     }
+
+    alert("enfant inscrit ");
+    window.location ="/";//redirection
 }

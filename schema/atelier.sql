@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `workshop` (
   `price` DECIMAL(5,2) NOT NULL,
   `max_kids` INT(3) NOT NULL,
   `image` VARCHAR(255) NULL,
-  `visible` TINYINT(1) NULL,
+  `visible` TINYINT(1) NULL DEFAULT 1,
   `public_age_id` INT NOT NULL,
   `establishment_id` INT NOT NULL,
   `workshop_category_id` INT NOT NULL,
@@ -174,7 +174,7 @@ INSERT INTO `public_age` (`id`, `start`, `end`) VALUES (NULL, '5', '7'), (NULL, 
 INSERT INTO `address` (`id`, `address`, `complement`, `city`, `zipcode`) VALUES (NULL, '115', 'CHEMIN DUCHEMIN', 'STE MARIE', '97438'), (NULL, '12', 'AVENUE LAFORET', 'ST PIERRE', '97410');
 INSERT INTO `establishment` (`id`, `name`, `address_id`) VALUES (NULL, 'PIERRE ROSELLI', '2'), (NULL, 'ESPACE CULTUREL', '1');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'développement 3D', 'apprendre a développer des jeux', '300.00', '20', 'games.jpg', '1', '4', '1', '1');
-INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'Automobile', 'autour de la passion automobile', '20', '15', 'auto.jpg', NULL, '4', '2', '3');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'Automobile', 'autour de la passion automobile', '20', '15', 'auto.jpg', '1', '4', '2', '3');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Mathématiques orientée objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'La pyramide infernale', 'test simplon réunion avant prairie', '0', '16', 'pyramide.jpg', '1', '4', '2', '4');
 INSERT INTO `timetable` (`id`, `startAt`, `endAt`, `enable`, `workshop_id`) VALUES (NULL, '2017-05-18 00:00:00', '2017-05-19 00:00:00', '1', '1');

@@ -34,46 +34,52 @@ function workshopType() {
 
 
 function workshopCreate(){
-
   if (
-    $( "#atelierList" ).val() !="" &&
     $( "#nom" ).val() != "" &&
-    $( "#prenom" ).val() != "" &&
-    $( "#mail" ).val() != "" &&
-    $( "#adresse" ).val() != "" &&
-    $( "#ville" ).val() != "" &&
-    $( "#cp" ).val() != "" &&
-    $( "#tel" ).val() != "" &&
-    $( "#nomEnfant1" ).val() != "" &&
-    $( "#prenomEnfant1" ).val() != "" &&
-    $( "#dateEnfant1" ).val() != ""
+    $( "#description" ).val() != "" &&
+    $( "#categoryList" ).val() != "" &&
+    $( "#ageList" ).val() != "" &&
+    $( "#establishmentList" ).val() != "" &&
+    $( "#maxEnfant" ).val() != "" &&
+    $( "#prix" ).val() != "" &&
+    $( "#dateDebut" ).val() != "" &&
+    $( "#dateFin" ).val() != ""
   ) {
 
 
+
+
     $.ajax({
-        type: 'POST',
-        url: 'models/Workshop.php',
-        dataType: 'json',
-        data: {
-          nom:$( "#nom" ).val(),
-          description:$( "#description" ).val(),
-          categorie:$( "#categoryList" ).val(),
-          age:$( "#ageList" ).val(),
-          establishment:$( "#establishmentList" ).val(),
-          maxEnfant:$( "#maxEnfant" ).val(),
-          prix:$( "#prix" ).val(),
+      type: 'POST',
+      url: 'models/workshopCreate.php',
+      dataType: 'json',
+      data: {
+        nom:$( "#nom" ).val(),
+        description:$( "#description" ).val(),
+        categorie:$( "#categoryList" ).val(),
+        age:$( "#ageList" ).val(),
+        establishment:$( "#establishmentList" ).val(),
+        maxEnfant:$( "#maxEnfant" ).val(),
+        prix:$( "#prix" ).val(),
+        dateDebut:$( "#dateDebut" ).val(),
+        dateFin:$( "#dateFin" ).val(),
 
 
 
-        },
-        success: function (data) {
-          console.log('créé');
+      },
+      success: function (data) {
+        alert("créé");
+        window.location ="/?c=workshop&t=index";//redirection
 
-        }
+      }
 
     });
-    }
-    else {
-      alert("champs manquants");
-    }
+
+    
+    alert("atelier créé ");
+    window.location ="/?c=workshop&t=index";//redirection
+  }
+  else {
+    alert('champs manquants');
+  }
 }

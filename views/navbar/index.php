@@ -18,7 +18,11 @@ $('.button-collapse').sideNav({
       <a href="/" class="brand-logo uppercase">Simplon Réunion</a>
       <!-- navbar for small devices -->
       <ul class="right hide-on-med-and-down ">
-        <li><a href="/?c=workshop&t=Index">Ateliers</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Ateliers<i class="material-icons right">arrow_drop_down</i></a></li>
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="/?c=workshop&t=Index">liste</a></li>
+          <li><a href="/?c=workshop&t=create">créér</a></li>
+        </ul>
         <li><a href="/?c=user&t=register">Inscrire</a></li>
         <li><a href="/?c=faq&t=Index">FAQ</a></li>
         <li><a href="/?c=nousContacter&t=Index">Contact</a></li>
@@ -36,10 +40,10 @@ $('.button-collapse').sideNav({
 
 <ul id="slide-out" class="side-nav">
   <li><a href="/"><i class="material-icons">cloud</i>Accueil</a></li>
-  <li><a href="/?c=workshop&t=Index"><i class="material-icons">cloud</i>Ateliers</a></li>
-  <li><a href="/?c=user&t=register"><i class="material-icons">cloud</i>Inscrire</a></li>
-  <li><a href="/?c=faq&t=Index"><i class="material-icons">cloud</i>FAQ</a></li>
-  <li><a href="/?c=nousContacter&t=Index"><i class="material-icons">cloud</i>Contact</a></li>
+  <li><a href="/?c=workshop&t=Index">Ateliers</a></li>
+  <li><a href="/?c=user&t=register">Inscrire</a></li>
+  <li><a href="/?c=faq&t=Index">FAQ</a></li>
+  <li><a href="/?c=nousContacter&t=Index">Contact</a></li>
 
 </ul>
 <!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a -->
