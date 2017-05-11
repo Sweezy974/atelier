@@ -122,7 +122,6 @@ class User extends TestCase{
     $result= $queryTable->fetchAll(PDO::FETCH_ASSOC);
     $expectedTable = array(
       array(
-        'id'=>$idWorkshop,
         'workshop_id'=>'1',
         'kid_id' =>$idKid,
         'has_participated' => '1',
@@ -132,31 +131,32 @@ class User extends TestCase{
 
 
     $this->assertEquals($expectedTable, $result);
-    //
-    // //delete last kid_has_parent
-    // $bdd = $this->getConnection();
-    // $req = $bdd->prepare ("DELETE FROM workshop_has_kid where id='".$idWorkshop."'");
-    // $req -> execute();
 
-    // //delete last kid_has_parent
-    // $bdd = $this->getConnection();
-    // $req = $bdd->prepare ("DELETE FROM kid_has_parent where id='".$idKidHasParent."'");
-    // $req -> execute();
-    //
-    // //delete last child
-    // $bdd = $this->getConnection();
-    // $req = $bdd->prepare ("DELETE FROM kid where id='".$idChild."'");
-    // $req -> execute();
-    //
-    // //delete last parent
-    // $bdd = $this->getConnection();
-    // $req = $bdd->prepare ("DELETE FROM parent where id='".$idParent."'");
-    // $req -> execute();
-    //
-    // //delete last address
-    // $bdd = $this->getConnection();
-    // $req = $bdd->prepare ("DELETE FROM address where id='".$idAddress."'");
-    // $req -> execute();
+    
+    //delete last workshop_has_kid
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("DELETE FROM workshop_has_kid where workshop_id='".$idWorkshop."'");
+    $req -> execute();
+    //delete last kid_has_parent
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("DELETE FROM kid_has_parent where kid_id='".$idKid."' AND parent_id='".$idParent."' ");
+    $req -> execute();
+
+    //delete last child
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("DELETE FROM kid where id='".$idKid."'");
+    $req -> execute();
+    //delete last parent
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("DELETE FROM parent where id='".$idParent."'");
+    $req -> execute();
+    //delete last address
+    $bdd = $this->getConnection();
+    $req = $bdd->prepare ("DELETE FROM address where id='".$idAddress."'");
+    $req -> execute();
+
+
+
   }
 
 
