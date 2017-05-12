@@ -30,7 +30,7 @@ class WorkshopCreate
 
 
     $bdd = $this->getConnection();
-    $req = $bdd->prepare ("INSERT INTO workshop (title,description,price,max_kids,image,visible,public_age_id,establishment_id,workshop_category_id) VALUES (:title,:description,:price,:max_kids,'',1,:age,:establishment,:category)");
+    $req = $bdd->prepare ("INSERT INTO workshop (title,description,price,max_kids,image,visible,public_age_id,establishment_id,workshop_category_id) VALUES (:title,:description,:price,:max_kids,'atelier.jpg',1,:age,:establishment,:category)");
     $req -> bindParam(':title',  $_POST['nom']);
     $req -> bindParam(':description',  $_POST['description']);
     $req -> bindParam(':price',  $_POST['prix']);
