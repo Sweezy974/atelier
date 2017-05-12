@@ -3,7 +3,7 @@ function indexVehicleList() {
   var idp = $('#id_page').val();
   $.ajax({
     type: 'POST',
-    url: 'models/Workshop.php',
+    url: '?c=workshop&t=Index',
     dataType: 'json',
     data: {
       id_page: idp

@@ -28,7 +28,7 @@ class Workshop
     $bdd = $this->getConnection();
     $req = $bdd->prepare('SELECT * FROM workshop WHERE visible=1');
     $req->execute();
-    $workshop = $req->fetchAll();
+    $workshop = $req->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($workshop);
     foreach ($workshop as $work) {
       $response['title'][] = utf8_encode($work['title']);
@@ -46,7 +46,7 @@ class Workshop
     $bdd = $this->getConnection();
     $req = $bdd->prepare('SELECT * FROM workshop_category');
     $req->execute();
-    $categories = $req->fetchAll();
+    $categories = $req->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($workshop);
     foreach ($categories as $category) {
       $response['categoryId'][] = $category['id'];
@@ -60,7 +60,7 @@ class Workshop
     $bdd = $this->getConnection();
     $req = $bdd->prepare('SELECT * FROM public_age ');
     $req->execute();
-    $ageRanges = $req->fetchAll();
+    $ageRanges = $req->fetchAll(PDO::FETCH_ASSOC);
     // var_dump($workshop);
     foreach ($ageRanges as $ageRange) {
       $response['age_id'][] = $ageRange['id'];

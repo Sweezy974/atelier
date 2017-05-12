@@ -19,7 +19,7 @@
 <div class="row">
   <div class="container">
     <div class="col s12 m12 l12">
-      <h5>Programmation informatique pour les enfants</h5>
+      <h5>Bienvenue</h5>
     </div>
     <div class="col s12 m12 l12 center">
 

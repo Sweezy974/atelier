@@ -30,7 +30,7 @@ class Workshop extends TestCase{
     $expectedTable = array(
       array('id' => '1','title' => 'developpement 3D','description' => 'developper des jeux','price' => '300.00','max_kids' => '20','image' => 'games.jpg','visible' => '1','public_age_id' => '4','establishment_id' => '1','workshop_category_id' => '1'),
       array('id' => '2','title' => 'Automobile','description' => 'la passion automobile','price' => '20.00','max_kids' => '15','image' => 'auto.jpg','visible' => '1','public_age_id' => '4','establishment_id' => '2','workshop_category_id' => '3'),
-      array('id' => '3','title' => 'MOO','description' => 'Mathematiques orientee objet','price' => '40.00','max_kids' => '10','image' => 'education.jpg','visible' => '1','public_age_id' => '4','establishment_id' => '1','workshop_category_id' => '2'),
+      array('id' => '3','title' => 'MOO','description' => 'Maths orientee objet','price' => '40.00','max_kids' => '10','image' => 'education.jpg','visible' => '1','public_age_id' => '4','establishment_id' => '1','workshop_category_id' => '2'),
       array('id' => '4','title' => 'La pyramide infernale','description' => 'test simplon reunion','price' => '0.00','max_kids' => '16','image' => 'pyramide.jpg','visible' => '1','public_age_id' => '4','establishment_id' => '2','workshop_category_id' => '4')
     );
 

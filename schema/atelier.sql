@@ -188,7 +188,7 @@ INSERT INTO `establishment` (`id`, `name`, `address_id`) VALUES (NULL, 'PIERRE R
 
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'developpement 3D', 'developper des jeux', '300.00', '20', 'games.jpg', '1', '4', '1', '1');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'Automobile', 'la passion automobile', '20', '15', 'auto.jpg', '1', '4', '2', '3');
-INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Mathematiques orientee objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Maths orientee objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'La pyramide infernale', 'test simplon reunion', '0', '16', 'pyramide.jpg', '1', '4', '2', '4');
 
 INSERT INTO `timetable` (`id`, `startAt`, `endAt`, `enable`, `workshop_id`) VALUES (NULL, '2017-05-18 00:00:00', '2017-05-19 00:00:00', '1', '1');
