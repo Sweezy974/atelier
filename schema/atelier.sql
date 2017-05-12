@@ -57,7 +57,9 @@ CREATE TABLE IF NOT EXISTS `establishment` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_establishment_address1`
     FOREIGN KEY (`address_id`)
-    REFERENCES `address` (`id`))
+    REFERENCES `address` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -84,7 +86,9 @@ CREATE TABLE IF NOT EXISTS `workshop` (
     REFERENCES `public_age` (`id`),
   CONSTRAINT `fk_workshop_establishment1`
     FOREIGN KEY (`establishment_id`)
-    REFERENCES `establishment` (`id`))
+    REFERENCES `establishment` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -100,7 +104,9 @@ CREATE TABLE IF NOT EXISTS `timetable` (
   PRIMARY KEY (`id`, `workshop_id`),
   CONSTRAINT `fk_timetable_workshop1`
     FOREIGN KEY (`workshop_id`)
-    REFERENCES `workshop` (`id`))
+    REFERENCES `workshop` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -129,7 +135,9 @@ CREATE TABLE IF NOT EXISTS `parent` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_parent_address1`
     FOREIGN KEY (`address_id`)
-    REFERENCES `address` (`id`))
+    REFERENCES `address` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -147,7 +155,9 @@ CREATE TABLE IF NOT EXISTS `workshop_has_kid` (
     REFERENCES `workshop` (`id`),
   CONSTRAINT `fk_workshop_has_kid_kid1`
     FOREIGN KEY (`kid_id`)
-    REFERENCES `kid` (`id`))
+    REFERENCES `kid` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -163,7 +173,9 @@ CREATE TABLE IF NOT EXISTS `kid_has_parent` (
     REFERENCES `kid` (`id`),
   CONSTRAINT `fk_kid_has_parent_parent1`
     FOREIGN KEY (`parent_id`)
-    REFERENCES `parent` (`id`))
+    REFERENCES `parent` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
