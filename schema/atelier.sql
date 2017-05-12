@@ -57,7 +57,9 @@ CREATE TABLE IF NOT EXISTS `establishment` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_establishment_address1`
     FOREIGN KEY (`address_id`)
-    REFERENCES `address` (`id`))
+    REFERENCES `address` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -84,7 +86,9 @@ CREATE TABLE IF NOT EXISTS `workshop` (
     REFERENCES `public_age` (`id`),
   CONSTRAINT `fk_workshop_establishment1`
     FOREIGN KEY (`establishment_id`)
-    REFERENCES `establishment` (`id`))
+    REFERENCES `establishment` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -100,7 +104,9 @@ CREATE TABLE IF NOT EXISTS `timetable` (
   PRIMARY KEY (`id`, `workshop_id`),
   CONSTRAINT `fk_timetable_workshop1`
     FOREIGN KEY (`workshop_id`)
-    REFERENCES `workshop` (`id`))
+    REFERENCES `workshop` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -129,7 +135,9 @@ CREATE TABLE IF NOT EXISTS `parent` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_parent_address1`
     FOREIGN KEY (`address_id`)
-    REFERENCES `address` (`id`))
+    REFERENCES `address` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -147,7 +155,9 @@ CREATE TABLE IF NOT EXISTS `workshop_has_kid` (
     REFERENCES `workshop` (`id`),
   CONSTRAINT `fk_workshop_has_kid_kid1`
     FOREIGN KEY (`kid_id`)
-    REFERENCES `kid` (`id`))
+    REFERENCES `kid` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -163,7 +173,9 @@ CREATE TABLE IF NOT EXISTS `kid_has_parent` (
     REFERENCES `kid` (`id`),
   CONSTRAINT `fk_kid_has_parent_parent1`
     FOREIGN KEY (`parent_id`)
-    REFERENCES `parent` (`id`))
+    REFERENCES `parent` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE )
 ENGINE = InnoDB;
 
 
@@ -173,10 +185,12 @@ INSERT INTO `workshop_category` (`id`, `name`) VALUES (NULL, 'JEUX VIDEO'), (NUL
 INSERT INTO `public_age` (`id`, `start`, `end`) VALUES (NULL, '5', '7'), (NULL, '8', '10'), (NULL, '11 ', '13'), (NULL, '14', '17');
 INSERT INTO `address` (`id`, `address`, `complement`, `city`, `zipcode`) VALUES (NULL, '115', 'CHEMIN DUCHEMIN', 'STE MARIE', '97438'), (NULL, '12', 'AVENUE LAFORET', 'ST PIERRE', '97410');
 INSERT INTO `establishment` (`id`, `name`, `address_id`) VALUES (NULL, 'PIERRE ROSELLI', '2'), (NULL, 'ESPACE CULTUREL', '1');
-INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'développement 3D', 'développer des jeux', '300.00', '20', 'games.jpg', '1', '4', '1', '1');
+
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'developpement 3D', 'developper des jeux', '300.00', '20', 'games.jpg', '1', '4', '1', '1');
 INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'Automobile', 'la passion automobile', '20', '15', 'auto.jpg', '1', '4', '2', '3');
-INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Mathématiques orientée objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
-INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'La pyramide infernale', 'test simplon réunion ', '0', '16', 'pyramide.jpg', '1', '4', '2', '4');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'MOO', 'Mathematiques orientee objet', '40', '10', 'education.jpg', '1', '4', '1', '2');
+INSERT INTO `workshop` (`id`, `title`, `description`, `price`, `max_kids`, `image`, `visible`, `public_age_id`, `establishment_id`, `workshop_category_id`) VALUES (NULL, 'La pyramide infernale', 'test simplon reunion', '0', '16', 'pyramide.jpg', '1', '4', '2', '4');
+
 INSERT INTO `timetable` (`id`, `startAt`, `endAt`, `enable`, `workshop_id`) VALUES (NULL, '2017-05-18 00:00:00', '2017-05-19 00:00:00', '1', '1');
 INSERT INTO `kid` (`id`, `firstname`, `lastname`, `birthday`, `classroom`) VALUES (NULL, 'JUNIOR', 'THE KID', '2010-11-10', 'CP');
 INSERT INTO `kid` (`id`, `firstname`, `lastname`, `birthday`, `classroom`) VALUES (NULL, 'ANITA', 'THE KID', '2000-04-10', '2ND');

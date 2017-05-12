@@ -1,6 +1,6 @@
 # atelier
 # eval-atelier-CRUD  Installation :  
-1. cd attelier 
+1. cd atelier 
 2. composer install 
 3. import database schema/atelier.sql 
 4. configure app/Config.php to connect to your database    

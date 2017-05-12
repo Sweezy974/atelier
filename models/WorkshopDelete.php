@@ -25,19 +25,18 @@ class workshopDelete
   public function workshopDelete()
   {
 
-    # code...
-    // delete a workshop
-    // echo $_POST['nom']."</br>";
     $deleteWorkshop = $_POST['id'];
     $bdd = $this->getConnection();
-    $req = $bdd->prepare ("UPDATE workshop SET visible=0 WHERE id=:id");
-    $req -> bindParam(':id', $deleteWorkshop);
+    // delete in workshop_has_kid first
+    $req = $bdd->prepare ('DELETE FROM workshop_has_kid where workshop_id=:id');
+    $req -> bindValue(':id',  $deleteWorkshop);
+    $req -> execute();
+    // delete the workshop then
+    $req = $bdd->prepare ('DELETE FROM workshop where id=:id');
+    $req -> bindValue(':id',  $deleteWorkshop);
     $req -> execute();
   }
 
 }
 $workshop = new workshopDelete();
 $workshop->workshopDelete();
-
-// $workshopType = new Workshop();
-// $workshop->workshopType();
