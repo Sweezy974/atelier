@@ -8,7 +8,8 @@
         "App\\": "app/",
         "Models\\": "models/",
         "Views\\": "views/",
-        "Controllers\\": "controllers/"
+        "Controllers\\": "controllers/",
+        "Test\\": "test/"
       }
   },
   "scripts": {

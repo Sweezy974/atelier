@@ -1,24 +1,11 @@
 <?php
 
-
+namespace Test;
+use PDO;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\DbUnit\TestCaseTrait;
 
-class User extends TestCase{
-
-  private $connection;
-
-  protected function getConnection()
-  {
-    try {
-      $this->connection = new PDO('mysql:host=localhost;dbname=atelier','root','');
-      $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-      print "Erreur !: " . $e->getMessage() . "<br/>";
-      die();
-    }
-    return $this->connection;
-  }
+class User extends DatabaseTest{
 
 
   public function testWorkshopRegistration()
@@ -132,7 +119,7 @@ class User extends TestCase{
 
     $this->assertEquals($expectedTable, $result);
 
-    
+
     //delete last workshop_has_kid
     $bdd = $this->getConnection();
     $req = $bdd->prepare ("DELETE FROM workshop_has_kid where workshop_id='".$idWorkshop."'");
